@@ -3,6 +3,6 @@ const {data} = require('../Config/db')
 const  routes  = require('./Rooute')
 
 dataRoute.get('/ecom',data)
-dataRoute.post('/ecom',routes)
+dataRoute.use('/log',routes)
 
 module.exports = {dataRoute}

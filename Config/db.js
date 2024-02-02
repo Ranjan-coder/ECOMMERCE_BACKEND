@@ -467,6 +467,16 @@ const data = (req,res)=>{
             description : "You can get a plentiful supply of hot water for bathing with the high-performance Hindware Immedio 10 L Water Heater. It sports a compact size and can be installed in any small area. Additionally, its sophisticated design will add to the interior of your home. Also, this water heater boasts a high-quality, 2000 W copper heating element that provides hot water quickly. This not only helps you save valuable time but also adds ease to your daily tasks. Moreover, this water heater is protected from corrosion courtesy of its glass-lined tank construction.",
             rating : "4.1*"
         },
+        {
+            id : 51,
+            category : "iphone",
+            image : "https://rukminim2.flixcart.com/image/832/832/ksru0sw0/water-geyser/f/z/m/immedio-hindware-original-imag69kgp8yg7jgf.jpeg?q=70&crop=false",
+            name : "Hindware 10 L Storage Water Geyser (Immedio Neo, White)",
+            price : "₹4,999",
+            description : "You can get a plentiful supply of hot water for bathing with the high-performance Hindware Immedio 10 L Water Heater. It sports a compact size and can be installed in any small area. Additionally, its sophisticated design will add to the interior of your home. Also, this water heater boasts a high-quality, 2000 W copper heating element that provides hot water quickly. This not only helps you save valuable time but also adds ease to your daily tasks. Moreover, this water heater is protected from corrosion courtesy of its glass-lined tank construction.",
+            rating : "4.1*"
+        },
+        
     ]
     )}
 
