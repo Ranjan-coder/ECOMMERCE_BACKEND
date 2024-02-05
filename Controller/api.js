@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 // const saltRound = 10
 const Ecom = require('../Model/userModel')
@@ -138,5 +138,9 @@ const login = async (req, res) => {
     // }
 }
 
+const cart = (req,res)=>{
+    res.send({msg:'Welcome to cart'})
+}
 
-module.exports = {register,login} 
+
+module.exports = {register,login,cart} 
