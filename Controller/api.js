@@ -143,4 +143,14 @@ const cart = (req,res)=>{
 }
 
 
-module.exports = {register,login,cart} 
+const product = async(req,res)=>{
+    try{
+        const allUser = await Ecom.find()
+        res.send(allUser)
+    }
+    catch(error){
+        res.status(500).send(error,"error")
+    }
+}
+
+module.exports = {register,login,cart,product} 
