@@ -18,7 +18,7 @@ const register = async (req, res) => {
         const existingUser = await Ecom.findOne({ email: email });
 
         if (existingUser) {
-            return res.status(400).send({ error: "This email is already registered" });
+            return res.status(400).send({ msg: "This email is already registered" });
         }
 
         // Hash the password
