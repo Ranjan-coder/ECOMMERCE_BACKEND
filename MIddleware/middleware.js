@@ -7,11 +7,11 @@ const auth = (req,res,next)=>{
 
     const data = req.headers['authorization']
     console.log(data,'token');
-    const token = data.split(' ')[1]
-    console.log(token);
+    const jwtToken = data.split(' ')[1]
+    console.log(jwtToken);
 
-    if(token){
-    jwt.verify(token,secretkey,(err,validate)=>{
+    if(jwtToken){
+    jwt.verify(jwtToken,secretkey,(err,validate)=>{
         if(err){
             return res.send('Error while accessing',err)
         }
