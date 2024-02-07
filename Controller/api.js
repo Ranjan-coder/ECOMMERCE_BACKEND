@@ -18,7 +18,7 @@ const register = async (req, res) => {
         const existingUser = await Ecom.findOne({ email: email });
 
         if (existingUser) {
-            return res.status(400).send({ msg: "This email is already registered" });
+            return res.send({msg:"This email is already registered"});
         }
 
         // Hash the password
@@ -100,8 +100,8 @@ const login = async (req, res) => {
             console.log(login, 'login');
 
             if (login) {
-                const jwtToken = jwt.sign({ user: loginData.email }, secretkey, { expiresIn: '365d' });
-                return res.send({ msg: 'User logged in successfully', jwtToken: jwtToken });
+                const jwtToken = jwt.sign({user:loginData.email }, secretkey, { expiresIn: '365d' });
+                return res.send({msg:'User logged in successfully', jwtToken:jwtToken});
             } else {
                 return res.send('Password is incorrect');
             }
@@ -110,7 +110,7 @@ const login = async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        return res.status(500).send({ error: 'Internal Server Error' });
+        return res.send({ error: 'Internal Server Error' });
     }
 
 
