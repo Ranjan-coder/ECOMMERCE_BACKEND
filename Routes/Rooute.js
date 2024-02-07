@@ -8,7 +8,7 @@ const routes = express.Router()
 
 routes.post('/register',register)
 routes.post('/login',login)
-routes.get('/cart',auth, cart)
+routes.get('/cart',auth,cart)
 routes.get('/data',product)
 
 
