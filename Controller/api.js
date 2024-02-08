@@ -28,7 +28,7 @@ const register = async (req, res) => {
         const newUser = await Ecom.create({ firstname, email, password: hashedPassword });
 
         // Generate JWT token
-        const jwtToken = jwt.sign({ user: newUser.email }, secretkey);
+        const jwtToken = jwt.sign({ user: newUser.email,firstname }, secretkey);
 
         res.status(200).send({ msg: "User Registered successfully", newUser: newUser, jwtToken: jwtToken });
     } catch (error) {
