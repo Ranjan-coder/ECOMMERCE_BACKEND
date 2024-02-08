@@ -161,7 +161,7 @@ const getUserByName = async (req, res) => {
     try {
       const user = await Ecom.findOne({ email });
       if (user) {
-        res.json({ name: user.firstname });
+        res.json({ firstname: user.firstname });
       } else {
         res.json({ error: 'User not found' });
       }
