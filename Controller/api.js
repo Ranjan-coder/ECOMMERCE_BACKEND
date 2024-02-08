@@ -12,7 +12,7 @@ const register = async (req, res) => {
     try {
         const saltRound = 10; // Define saltRound here
 
-        const { name, email, password } = req.body;
+        const { firstname, email, password } = req.body;
 
         // Check if user with the provided email already exists
         const existingUser = await Ecom.findOne({ email: email });
@@ -25,7 +25,7 @@ const register = async (req, res) => {
         const hashedPassword = bcrypt.hashSync(password, saltRound);
 
         // Create a new user with hashed password
-        const newUser = await Ecom.create({ name, email, password: hashedPassword });
+        const newUser = await Ecom.create({ firstname, email, password: hashedPassword });
 
         // Generate JWT token
         const jwtToken = jwt.sign({ user: newUser.email }, secretkey);
@@ -153,4 +153,23 @@ const product = async(req,res)=>{
     }
 }
 
-module.exports = {register,login,cart,product} 
+
+
+// Controller to fetch user name based on email
+const getUserByName = async (req, res) => {
+    const { email } = req.query;
+    try {
+      const user = await Ecom.findOne({ email });
+      if (user) {
+        res.json({ name: user.firstname });
+      } else {
+        res.json({ error: 'User not found' });
+      }
+    } catch (error) {
+      console.error('Error fetching user:', error);
+      res.json({ error: 'Internal server error' });
+    }
+  }
+
+
+module.exports = {register,login,cart,product,getUserByName} 
