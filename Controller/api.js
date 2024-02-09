@@ -100,7 +100,7 @@ const login = async (req, res) => {
             console.log(login, 'login');
 
             if (login) {
-                const jwtToken = jwt.sign({user:loginData.email }, secretkey, { expiresIn: '365d' });
+                const jwtToken = jwt.sign({user:loginData.email,firstname }, secretkey, { expiresIn: '365d' });
                 return res.send({msg:'User logged in successfully', jwtToken:jwtToken});
             } else {
                 return res.send('Password is incorrect');
