@@ -21,6 +21,7 @@ app.use('/pages',dataRoute)
 
 
 app.listen(port,()=>{
+    // connect to db 
     connectDB()
     console.log('Server is running');
 })
