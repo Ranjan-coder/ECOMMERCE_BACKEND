@@ -95,6 +95,15 @@ const cart = (req,res)=>{
     res.send({msg:'Welcome to cart'})
 }
 
+const tourpackage = (req,res)=>{
+    res.send({msg:'This is tour package'})
+}
+
+
+const touroffer = (req,res)=>{
+    res.send({msg:'This is tour offer'})
+}
+
 
 const product = async(req,res)=>{
     try{
@@ -125,4 +134,4 @@ const getUserByName = async (req, res) => {
   }
 
 
-module.exports = {register,login,cart,product,getUserByName} 
+module.exports = {register,login,cart,product,getUserByName,tourpackage,touroffer} 
